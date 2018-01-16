@@ -2,23 +2,30 @@ package com.example.dali_bsf.spectrum.ui.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.example.dali_bsf.spectrum.R;
+import com.example.dali_bsf.spectrum.data.Repostry.IParentRepository;
+
+import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
-import cfe.spectrum.R;
-import dagger.android.AndroidInjection;
-import dagger.android.AndroidInjector;
-import dagger.android.support.DaggerAppCompatActivity;
+import dagger.android.DaggerActivity;
 
 
-public class HomeActivity extends DaggerAppCompatActivity implements HomeContract.HomeView {
+public class HomeActivity extends DaggerActivity implements HomeContract.HomeView {
     @Inject
     HomeContract.HomePresenter presenter;
+    @Inject
+    IParentRepository parentRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if( parentRepository == null )
+            Log.e("Null Error","parent repository is null");
     }
 
     @Override
