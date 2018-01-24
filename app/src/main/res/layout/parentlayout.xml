@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/"
+    android:background="@color/parentBackground"
     >
 
 <LinearLayout
@@ -39,7 +39,6 @@
         android:id="@+id/imageButton2"
         android:layout_width="204dp"
         android:layout_height="140dp"
-        app:srcCompat="@mipmap/application"
         tools:layout_editor_absoluteX="457dp"
         tools:layout_editor_absoluteY="337dp" />
     </LinearLayout>
@@ -96,7 +95,7 @@
                 android:id="@+id/imageButton1"
                 android:layout_width="204dp"
                 android:layout_height="140dp"
-                app:srcCompat="@mipmap/timer"
+                app:srcCompat="@mipmap/time"
 
 
                 /></LinearLayout>
