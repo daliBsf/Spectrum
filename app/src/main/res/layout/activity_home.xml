@@ -1,10 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context="com.example.dali_bsf.spectrum.ui.home.HomeActivity">
 
-</RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+
+
+        >
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/learn"
+            android:layout_margin="10dp"
+            android:src="@drawable/game"
+            android:background="@null"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/game"
+            android:src="@drawable/learn"
+            android:background="@null"
+            android:layout_margin="10dp"
+
+            />
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/story"
+            android:src="@drawable/story"
+            android:background="@null"
+            android:layout_margin="10dp"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/art"
+            android:src="@drawable/art"
+            android:background="@null"
+            android:layout_margin="10dp"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/other"
+            android:src="@drawable/other"
+            android:background="@null"
+            android:layout_margin="10dp"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100dp"
+
+
+        >
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/browser"
+            android:src="@drawable/browser"
+            android:background="@null"
+            android:layout_margin="10dp"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/camera"
+            android:src="@drawable/camera"
+            android:background="@null"
+            android:layout_margin="10dp"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/gallery"
+            android:layout_margin="10dp"
+            android:src="@drawable/gallery"
+            android:background="@null"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/music"
+            android:layout_margin="10dp"
+            android:src="@drawable/music"
+            android:background="@null"
+
+            />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/calculatrice"
+            android:background="@null"
+
+            android:id="@+id/calculatrice"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
