@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/"
+    >
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp"
+    android:paddingTop="64dp"
+    android:paddingBottom="32dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="32dp"
+        android:paddingRight="16dp">
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="204dp"
+        android:layout_height="140dp"
+        app:srcCompat="@mipmap/personne"
+        /></LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="204dp"
+        android:layout_height="140dp"
+        app:srcCompat="@mipmap/application"
+        tools:layout_editor_absoluteX="457dp"
+        tools:layout_editor_absoluteY="337dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="204dp"
+        android:layout_height="140dp"
+        app:srcCompat="@mipmap/internet"  />
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="32dp">
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="204dp"
+        android:layout_height="140dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="457dp"
+        tools:layout_editor_absoluteY="337dp"  />
+</LinearLayout>
+</LinearLayout>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="32dp"
+            android:paddingRight="16dp">
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="204dp"
+                android:layout_height="140dp"
+                app:srcCompat="@mipmap/timer"
+
+
+                /></LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <ImageButton
+                android:id="@+id/imageButton22"
+                android:layout_width="204dp"
+                android:layout_height="140dp"
+                app:srcCompat="@mipmap/stat"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <ImageButton
+                android:id="@+id/imageButton23"
+                android:layout_width="204dp"
+                android:layout_height="140dp"
+                app:srcCompat="@mipmap/config"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="32dp">
+            <ImageButton
+                android:id="@+id/imageButton24"
+                android:layout_width="204dp"
+                android:layout_height="140dp"
+                app:srcCompat="@mipmap/home"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
