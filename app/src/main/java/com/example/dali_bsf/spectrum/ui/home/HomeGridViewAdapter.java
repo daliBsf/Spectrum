@@ -52,8 +52,8 @@ public class HomeGridViewAdapter extends RecyclerView.Adapter<HomeGridViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.app_icon) private  ImageView app_icon;
-        @BindView(R.id.app_name) private TextView app_name;
+        @BindView(R.id.app_icon) public   ImageView app_icon;
+        @BindView(R.id.app_name) public  TextView app_name;
 
 
         public ViewHolder(View itemView) {

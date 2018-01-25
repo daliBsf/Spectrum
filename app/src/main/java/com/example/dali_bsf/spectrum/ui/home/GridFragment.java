@@ -22,10 +22,10 @@ import butterknife.BindView;
 
 public class GridFragment extends Fragment {
     @BindView(R.id.grid_view_home)
-    RecyclerView gridView;
+    public RecyclerView gridView;
 
     @BindInt(R.integer.grid_col_number)
-            private int gridColNumber;
+    public  int gridColNumber;
     private ArrayList<Application> applications;
 
 
