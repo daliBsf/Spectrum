@@ -14,7 +14,7 @@
             android:name=".ui.home.HomeActivity"
             android:launchMode="singleInstance"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen">
+            android:theme="@style/AppFullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

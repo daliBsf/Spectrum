@@ -23,6 +23,7 @@ public class HomeActivity extends DaggerActivity implements HomeContract.HomeVie
     @Inject
     IParentRepository parentRepository;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
