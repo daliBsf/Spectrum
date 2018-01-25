@@ -1,5 +1,6 @@
 package com.example.dali_bsf.spectrum.ui.home;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,8 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dagger.android.DaggerActivity;
 
 
@@ -24,8 +27,8 @@ public class HomeActivity extends DaggerActivity implements HomeContract.HomeVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        if( parentRepository == null )
-            Log.e("Null Error","parent repository is null");
+        ButterKnife.bind(this);
+
     }
 
     @Override
