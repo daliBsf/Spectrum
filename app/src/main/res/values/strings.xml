@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="icone_Perssone">Compte</string>
+    <string name="icone_App">Applications</string>
+    <string name="icone_internet">Accés de réseau</string>
+    <string name="icone_media">Média content</string>
+    <string name="icone_temp">Limite de temps</string>
+    <string name="icone_home">Retour à android</string>
+    <string name="icone_config">Configurations</string>
+    <string name="icone_stat">Statistiques</string>
 </resources>
