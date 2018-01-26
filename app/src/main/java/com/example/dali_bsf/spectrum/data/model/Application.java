@@ -1,11 +1,13 @@
 package com.example.dali_bsf.spectrum.data.model;
 
 
+import io.realm.RealmObject;
+
 /**
  * Created by dali-bsf on 16/01/18.
  */
 
-public class Application {
+public class Application extends RealmObject {
     private String name;
     private int icon ;
 

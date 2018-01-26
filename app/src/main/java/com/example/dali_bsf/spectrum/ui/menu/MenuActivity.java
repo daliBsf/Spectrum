@@ -1,11 +1,12 @@
 package com.example.dali_bsf.spectrum.ui.menu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import com.example.dali_bsf.spectrum.R;
+import com.example.dali_bsf.spectrum.ui.ParentLayout.ParentActivity;
 import com.github.clans.fab.FloatingActionButton;
 
 import butterknife.BindView;
@@ -23,11 +24,6 @@ public class MenuActivity extends Activity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.control_parental)
-        public void onParentFloatButton(FloatingActionButton parent)
-    {
-
-    }
 
 
 }
