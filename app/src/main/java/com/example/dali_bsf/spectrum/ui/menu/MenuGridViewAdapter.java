@@ -1,12 +1,10 @@
-package com.example.dali_bsf.spectrum.ui.home;
+package com.example.dali_bsf.spectrum.ui.menu;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,11 +20,11 @@ import butterknife.ButterKnife;
  * Created by dali-bsf on 16/01/18.
  */
 
-public class HomeGridViewAdapter extends RecyclerView.Adapter<HomeGridViewAdapter.ViewHolder> {
+public class MenuGridViewAdapter extends RecyclerView.Adapter<MenuGridViewAdapter.ViewHolder> {
     ArrayList<Application> applications;
     LayoutInflater inflater;
 
-    public HomeGridViewAdapter(Context context, ArrayList<Application> applications )
+    public MenuGridViewAdapter(Context context, ArrayList<Application> applications )
     {
         this.applications=applications;
         this.inflater=LayoutInflater.from(context) ;

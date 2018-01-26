@@ -1,7 +1,5 @@
-package com.example.dali_bsf.spectrum.ui.home;
+package com.example.dali_bsf.spectrum.ui.menu;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import com.example.dali_bsf.spectrum.R;
 import com.example.dali_bsf.spectrum.data.model.Application;
@@ -42,8 +39,8 @@ public class GridFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        HomeGridViewAdapter homeGridViewAdapter =new HomeGridViewAdapter(getContext(),applications );
-        gridView.setAdapter(homeGridViewAdapter);
+        MenuGridViewAdapter menuGridViewAdapter =new MenuGridViewAdapter(getContext(),applications );
+        gridView.setAdapter(menuGridViewAdapter);
         gridView.setLayoutManager(new GridLayoutManager(getContext(),gridColNumber));
     }
 

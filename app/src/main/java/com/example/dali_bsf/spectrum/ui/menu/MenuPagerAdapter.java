@@ -1,12 +1,10 @@
-package com.example.dali_bsf.spectrum.ui.home;
+package com.example.dali_bsf.spectrum.ui.menu;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+
+import com.example.dali_bsf.spectrum.ui.menu.GridFragment;
 
 import java.util.ArrayList;
 
@@ -14,10 +12,10 @@ import java.util.ArrayList;
  * Created by dali-bsf on 16/01/18.
  */
 
-public class HomePagerAdapter extends FragmentPagerAdapter {
+public class MenuPagerAdapter extends FragmentPagerAdapter {
     ArrayList<GridFragment> fragments;
 
-    public HomePagerAdapter(FragmentManager fm, ArrayList<GridFragment> fragments) {
+    public MenuPagerAdapter(FragmentManager fm, ArrayList<GridFragment> fragments) {
         super(fm);
         this.fragments=fragments;
     }
