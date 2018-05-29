@@ -25,7 +25,7 @@
         </activity>
         <activity android:name=".ui.menu.MenuActivity" />
         <activity android:name=".ui.ApplicationsLayout.ApplicationsActivity" />
-        <activity android:name=".ui.ParentLayout.ParentActivity"></activity>
+        <activity android:name=".ui.ParentLayout.ParentActivity"/>
     </application>
 
 </manifest>
