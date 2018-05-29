@@ -46,7 +46,7 @@ public class MenuGridViewAdapter extends RecyclerView.Adapter<MenuGridViewAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return applications.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

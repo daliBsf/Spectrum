@@ -6,14 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.example.dali_bsf.spectrum.R;
-import com.example.dali_bsf.spectrum.ui.Application;
-import com.example.dali_bsf.spectrum.ui.home.HomeContract;
 import com.github.clans.fab.FloatingActionButton;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

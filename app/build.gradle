@@ -40,8 +40,8 @@ dependencies {
 
     compile 'com.github.vivchar:ViewPagerIndicator:1.1.0'
 
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'in.shadowfax:proswipebutton:1.0.1'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'

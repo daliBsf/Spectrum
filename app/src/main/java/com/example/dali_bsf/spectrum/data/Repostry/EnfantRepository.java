@@ -62,7 +62,7 @@ public class EnfantRepository implements IEnfantRepository {
     @Override
     public void getAllEnfant(onGetCallback callback) {
         Realm realm = Realm.getInstance(application);
-        List<Enfant> result = (List<Enfant>) realm.where(Enfant.class);
+        List<Enfant> result =  realm.where(Enfant.class).findAll();
         if (callback != null)
             callback.onSuccess(result);
         else

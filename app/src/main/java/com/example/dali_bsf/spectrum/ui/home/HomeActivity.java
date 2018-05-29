@@ -1,5 +1,6 @@
 package com.example.dali_bsf.spectrum.ui.home;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.util.Log;
 
 import com.example.dali_bsf.spectrum.R;
 import com.example.dali_bsf.spectrum.data.Repostry.IParentRepository;
+import com.github.clans.fab.FloatingActionButton;
+import com.example.dali_bsf.spectrum.ui.ParentLayout.ParentActivity;
 import com.github.clans.fab.FloatingActionButton;
 
 import java.util.logging.Logger;
@@ -38,6 +41,15 @@ public class HomeActivity extends DaggerActivity implements HomeContract.HomeVie
     {
 
     }
+
+
+    @OnClick(R.id.control_parental)
+    public void onParentFloatButton(FloatingActionButton parent)
+    {
+        Intent intent = new Intent(getApplicationContext(), ParentActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void setPresenter(HomeContract.HomePresenter presenter) {

@@ -1,15 +1,11 @@
 package com.example.dali_bsf.spectrum.data.model;
 
 
-import android.content.Intent;
-
-import io.realm.annotations.Ignore;
-
 /**
  * Created by dali-bsf on 16/01/18.
  */
 
-public class Application {
+public class Application extends RealmObject {
     private String name;
     private int icon ;
     @Ignore
@@ -43,13 +39,5 @@ public class Application {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Intent getIntent() {
-        return intent;
-    }
-
-    public void setIntent(Intent intent) {
-        this.intent = intent;
     }
 }
