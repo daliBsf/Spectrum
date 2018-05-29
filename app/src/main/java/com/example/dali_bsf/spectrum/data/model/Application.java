@@ -1,6 +1,11 @@
 package com.example.dali_bsf.spectrum.data.model;
 
 
+import android.content.Intent;
+
+import io.realm.RealmObject;
+import io.realm.annotations.Ignore;
+
 /**
  * Created by dali-bsf on 16/01/18.
  */

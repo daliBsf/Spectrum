@@ -20,6 +20,7 @@ public class Application extends DaggerApplication
         super.onCreate();
         RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()).setModules(new RealmModule()).build();
         Realm.setDefaultConfiguration(config);
+
     }
 
 

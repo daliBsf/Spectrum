@@ -8,7 +8,6 @@ import android.util.Log;
 
 import com.example.dali_bsf.spectrum.R;
 import com.example.dali_bsf.spectrum.data.Repostry.IParentRepository;
-import com.github.clans.fab.FloatingActionButton;
 import com.example.dali_bsf.spectrum.ui.ParentLayout.ParentActivity;
 import com.github.clans.fab.FloatingActionButton;
 
@@ -34,11 +33,6 @@ public class HomeActivity extends DaggerActivity implements HomeContract.HomeVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
-    }
-    @OnClick(R.id.control_parental)
-    public void onParentFloatButton(FloatingActionButton parent)
-    {
 
     }
 

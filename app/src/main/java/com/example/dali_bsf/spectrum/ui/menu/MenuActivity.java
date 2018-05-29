@@ -6,14 +6,19 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.example.dali_bsf.spectrum.R;
+import com.example.dali_bsf.spectrum.data.model.Application;
 import com.github.clans.fab.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dagger.android.DaggerActivity;
 
-public class MenuActivity extends DaggerActivity implements  MenuContract.MenuView {
+public class MenuActivity extends DaggerActivity implements MenuContract.MenuView {
     @BindView(R.id.viewpager)
     public ViewPager pager;
     @BindInt(R.integer.grid_col_number)
@@ -28,13 +33,13 @@ public class MenuActivity extends DaggerActivity implements  MenuContract.MenuVi
         setContentView(R.layout.activity_menu);
         ButterKnife.bind(this);
 
-        applicationsList=new ArrayList<>();
-        applications=new ArrayList<>();
-        int fragmentNumber=applications.size()/(gridColNumber*2);
+        applicationsList = new ArrayList<>();
+        applications = new ArrayList<>();
+        int fragmentNumber = applications.size() / (gridColNumber * 2);
         //zid thebet fel partie hedhi 5astan les index i,j
-        for(int i=0; i < fragmentNumber-1;i++) {
-            List<Application> apps=new ArrayList<>();
-            for ( int j=i*(gridColNumber*2);j<i*(gridColNumber*2+1);j++) {
+        for (int i = 0; i < fragmentNumber - 1; i++) {
+            List<Application> apps = new ArrayList<>();
+            for (int j = i * (gridColNumber * 2); j < i * (gridColNumber * 2 + 1); j++) {
                 apps.add(applications.get(j));
             }
             applicationsList.add(apps);
@@ -43,11 +48,8 @@ public class MenuActivity extends DaggerActivity implements  MenuContract.MenuVi
 
     }
 
-
-
-
     @Override
-    public void setPresenter(HomeContract.HomePresenter presenter) {
+    public void setPresenter(MenuContract.MenuPresenter presenter) {
 
     }
 }

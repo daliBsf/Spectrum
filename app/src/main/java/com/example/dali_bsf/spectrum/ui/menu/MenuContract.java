@@ -9,7 +9,7 @@ import com.example.dali_bsf.spectrum.ui.home.HomeContract;
  */
 
 public class MenuContract {
-    public interface  MenuView extends BaseView<HomeContract.HomePresenter> {
+    public interface  MenuView extends BaseView<MenuContract.MenuPresenter> {
 
     }
     public interface  MenuPresenter extends BasePresenter { }
