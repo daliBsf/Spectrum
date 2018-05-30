@@ -1,8 +1,7 @@
 package com.example.dali_bsf.spectrum.di;
 
-import com.example.dali_bsf.spectrum.ui.ApplicationsLayout.ApplicationActivityModule;
-import com.example.dali_bsf.spectrum.ui.ApplicationsLayout.ApplicationsActivity;
 import com.example.dali_bsf.spectrum.ui.ParentLayout.ParentActivity;
+import com.example.dali_bsf.spectrum.ui.ParentLayout.ParentActivityModule;
 import com.example.dali_bsf.spectrum.ui.Test.Test;
 import com.example.dali_bsf.spectrum.ui.home.HomeActivity;
 import com.example.dali_bsf.spectrum.ui.home.HomeActivityModule;
@@ -23,9 +22,8 @@ public abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = MenuActivityModule.class)
     public abstract MenuActivity bindMenuActivity();
 
-    @ContributesAndroidInjector(modules = ApplicationActivityModule.class)
-    public abstract ApplicationsActivity bindApplicationsActivity();
-    @ContributesAndroidInjector(modules = ApplicationActivityModule.class)
+
+    @ContributesAndroidInjector(modules = ParentActivityModule.class)
     public abstract ParentActivity bindParentActivity();
     @ContributesAndroidInjector(modules = com.example.dali_bsf.spectrum.ui.Test.ApplicationActivityModule.class)
     public abstract Test bindTestActivity();
