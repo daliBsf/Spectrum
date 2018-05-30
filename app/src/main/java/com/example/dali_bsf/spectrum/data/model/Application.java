@@ -2,6 +2,7 @@ package com.example.dali_bsf.spectrum.data.model;
 
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Ignore;
@@ -12,19 +13,20 @@ import io.realm.annotations.Ignore;
 
 public class Application extends RealmObject {
     private String name;
-    private int icon ;
+    @Ignore
+    private Drawable icon ;
     @Ignore
     private Intent intent;
     private  boolean authorized;
 
 
-    public Application(String name, int icon, Intent intent,boolean authorized) {
+    public Application(String name, Drawable icon, Intent intent,boolean authorized) {
         this.name = name;
         this.icon = icon;
         this.intent = intent;
         this.authorized=authorized;
     }
-    public Application(String name, int icon) {
+    public Application(String name, Drawable icon) {
         this.name = name;
         this.icon = icon;
     }
@@ -33,11 +35,11 @@ public class Application extends RealmObject {
     }
 
 
-    public int getIcon() {
+    public Drawable getIcon() {
         return icon;
     }
 
-    public void setIcon(int icon) {
+    public void setIcon(Drawable icon) {
         this.icon = icon;
     }
 

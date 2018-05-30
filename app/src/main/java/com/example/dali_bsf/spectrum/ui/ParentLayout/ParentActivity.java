@@ -1,18 +1,19 @@
 package com.example.dali_bsf.spectrum.ui.ParentLayout;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.dali_bsf.spectrum.R;
 import com.example.dali_bsf.spectrum.ui.ApplicationsLayout.ApplicationsActivity;
+import com.example.dali_bsf.spectrum.ui.Test.Test;
+import com.example.dali_bsf.spectrum.ui.home.HomeActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dagger.android.DaggerActivity;
 
-public class ParentActivity extends Activity {
+public class ParentActivity extends DaggerActivity {
 
 
 
@@ -25,7 +26,8 @@ public class ParentActivity extends Activity {
     @OnClick(R.id.application_manage)
     public void manageApplication()
     {
-        Intent intent =new Intent(getApplicationContext(), ApplicationsActivity.class);
+        Intent intent =new Intent(getApplicationContext(), Test.class);
+        Log.i("heyyyyyyyy","heyyyyyyyyyyyyyy");
         startActivity(intent);
 
     }

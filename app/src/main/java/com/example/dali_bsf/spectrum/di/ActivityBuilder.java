@@ -2,6 +2,8 @@ package com.example.dali_bsf.spectrum.di;
 
 import com.example.dali_bsf.spectrum.ui.ApplicationsLayout.ApplicationActivityModule;
 import com.example.dali_bsf.spectrum.ui.ApplicationsLayout.ApplicationsActivity;
+import com.example.dali_bsf.spectrum.ui.ParentLayout.ParentActivity;
+import com.example.dali_bsf.spectrum.ui.Test.Test;
 import com.example.dali_bsf.spectrum.ui.home.HomeActivity;
 import com.example.dali_bsf.spectrum.ui.home.HomeActivityModule;
 import com.example.dali_bsf.spectrum.ui.menu.MenuActivity;
@@ -23,6 +25,11 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = ApplicationActivityModule.class)
     public abstract ApplicationsActivity bindApplicationsActivity();
+    @ContributesAndroidInjector(modules = ApplicationActivityModule.class)
+    public abstract ParentActivity bindParentActivity();
+    @ContributesAndroidInjector(modules = com.example.dali_bsf.spectrum.ui.Test.ApplicationActivityModule.class)
+    public abstract Test bindTestActivity();
+
 
     /* ce code est equivalent a :
     @Binds

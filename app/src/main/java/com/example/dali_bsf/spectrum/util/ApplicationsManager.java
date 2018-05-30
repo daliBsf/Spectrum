@@ -3,7 +3,9 @@ package com.example.dali_bsf.spectrum.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.AppLaunchChecker;
 import android.util.Log;
 
@@ -32,9 +34,14 @@ public class ApplicationsManager {
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
-        for (ApplicationInfo packageInfo : packages) {
-            applications.add(new Application(packageInfo.packageName, packageInfo.icon, pm.getLaunchIntentForPackage(packageInfo.packageName),false));
+        for (ApplicationInfo applicationInfo : packages) {
+            if (!isSystemPackage(applicationInfo)) {
+                Drawable drawable = applicationInfo.loadIcon(pm);
+                applications.add(new Application(applicationInfo.packageName, drawable, pm.getLaunchIntentForPackage(applicationInfo.packageName), false));
+
+            }
         }
+
         return applications;
     }
 
@@ -43,12 +50,16 @@ public class ApplicationsManager {
         List<Application> authotzied = new ArrayList<>();
         SharedPreferences sharedPreferences = this.sharedPreferencesManager.getSharedPrefernces(enfant.getLogin());
         for (Application application : allApps) {
-            if (sharedPreferences.getBoolean(application.getName(), false))
-            { application.setAuthorized(true);
+            if (sharedPreferences.getBoolean(application.getName(), false)) {
+                application.setAuthorized(true);
                 authotzied.add(application);
-        }}
+            }
+        }
         return authotzied;
 
+    }
+    private boolean isSystemPackage(ApplicationInfo applicationInfo) {
+        return ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) ? true : false;
     }
 
     public void updateApplication(Enfant enfant, List<Application> applications) {
@@ -57,8 +68,7 @@ public class ApplicationsManager {
         for (Application application : applications
                 ) {
 
-            editor.putBoolean(application.getName(),application.isAuthorized());
-
+            editor.putBoolean(application.getName(), application.isAuthorized());
 
 
         }
