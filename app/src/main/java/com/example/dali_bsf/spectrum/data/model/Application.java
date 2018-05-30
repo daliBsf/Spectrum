@@ -15,11 +15,14 @@ public class Application extends RealmObject {
     private int icon ;
     @Ignore
     private Intent intent;
+    private  boolean authorized;
 
-    public Application(String name, int icon, Intent intent) {
+
+    public Application(String name, int icon, Intent intent,boolean authorized) {
         this.name = name;
         this.icon = icon;
         this.intent = intent;
+        this.authorized=authorized;
     }
     public Application(String name, int icon) {
         this.name = name;
@@ -44,5 +47,13 @@ public class Application extends RealmObject {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isAuthorized() {
+        return authorized;
+    }
+
+    public void setAuthorized(boolean authorized) {
+        this.authorized = authorized;
     }
 }

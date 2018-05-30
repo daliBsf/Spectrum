@@ -1,11 +1,14 @@
 package com.example.dali_bsf.spectrum.util;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.support.v4.app.AppLaunchChecker;
 import android.util.Log;
 
 import com.example.dali_bsf.spectrum.data.model.Application;
+import com.example.dali_bsf.spectrum.data.model.Enfant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,20 +21,47 @@ import static android.content.ContentValues.TAG;
 
 public class ApplicationsManager {
     private Context context;
-    public ApplicationsManager(Context context)
-    {
-        this.context=context;
+    private SharedPreferencesManager sharedPreferencesManager;
+
+    public ApplicationsManager(Context context) {
+        this.context = context;
     }
+
     public List<Application> getListApplication() {
         List<Application> applications = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
         for (ApplicationInfo packageInfo : packages) {
-            applications.add(new Application(packageInfo.packageName, packageInfo.icon, pm.getLaunchIntentForPackage(packageInfo.packageName)));
+            applications.add(new Application(packageInfo.packageName, packageInfo.icon, pm.getLaunchIntentForPackage(packageInfo.packageName),false));
         }
-    return  applications;
+        return applications;
     }
 
+    public List<Application> getAuthorizedApplication(Enfant enfant) {
+        List<Application> allApps = this.getListApplication();
+        List<Application> authotzied = new ArrayList<>();
+        SharedPreferences sharedPreferences = this.sharedPreferencesManager.getSharedPrefernces(enfant.getLogin());
+        for (Application application : allApps) {
+            if (sharedPreferences.getBoolean(application.getName(), false))
+            { application.setAuthorized(true);
+                authotzied.add(application);
+        }}
+        return authotzied;
+
+    }
+
+    public void updateApplication(Enfant enfant, List<Application> applications) {
+        SharedPreferences preferences = sharedPreferencesManager.getSharedPrefernces(enfant.getLogin());
+        SharedPreferences.Editor editor = preferences.edit();
+        for (Application application : applications
+                ) {
+
+            editor.putBoolean(application.getName(),application.isAuthorized());
+
+
+
+        }
+    }
 
 }

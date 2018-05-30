@@ -1,5 +1,7 @@
 package com.example.dali_bsf.spectrum.ui.ApplicationsLayout;
 
+import android.content.Context;
+
 import com.example.dali_bsf.spectrum.data.Repostry.ApplicationRepository;
 import com.example.dali_bsf.spectrum.data.Repostry.IApplicationRepository;
 import com.example.dali_bsf.spectrum.util.ApplicationsManager;
@@ -22,5 +24,6 @@ public abstract class ApplicationActivityModule {
     public static ApplicationsContract.ApplicationPresenter providePresenter(ApplicationsContract.ApplicationView view, ApplicationsManager manager){
         return new AppPresenter(view,manager);
     }
+
 
 }
