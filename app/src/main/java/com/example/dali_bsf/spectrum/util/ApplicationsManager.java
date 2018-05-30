@@ -3,6 +3,7 @@ package com.example.dali_bsf.spectrum.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.app.AppLaunchChecker;
 import android.util.Log;
@@ -34,8 +35,9 @@ public class ApplicationsManager {
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
-        for (ApplicationInfo packageInfo : packages) {
-            applications.add(new Application(packageInfo.packageName, packageInfo.icon, pm.getLaunchIntentForPackage(packageInfo.packageName),false));
+        for (ApplicationInfo applicationInfo : packages) {
+            if (!isSystemPackage(applicationInfo))
+                applications.add(new Application(applicationInfo.packageName, applicationInfo.loadIcon(pm), pm.getLaunchIntentForPackage(applicationInfo.packageName),false));
         }
         return applications;
     }
@@ -68,6 +70,9 @@ public class ApplicationsManager {
         return editor;
 
 
+    }
+    private boolean isSystemPackage(ApplicationInfo applicationInfo) {
+        return ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) ? true : false;
     }
 
 }

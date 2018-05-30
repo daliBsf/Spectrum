@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.dali_bsf.spectrum.R;
-import com.example.dali_bsf.spectrum.ui.ApplicationsLayout.ApplicationsActivity;
 import com.example.dali_bsf.spectrum.ui.Test.Test;
 import com.example.dali_bsf.spectrum.ui.home.HomeActivity;
 

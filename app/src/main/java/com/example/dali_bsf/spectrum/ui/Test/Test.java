@@ -47,7 +47,7 @@ public class Test extends DaggerActivity implements  ApplicationsContract.Applic
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(mAdapter);
 
-        presenter.prepareMovieData();
+        presenter.create(getIntent().getExtras());
     }
 
     @Override
