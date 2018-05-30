@@ -1,8 +1,12 @@
 package com.example.dali_bsf.spectrum.ui.Test;
 
+import android.os.Bundle;
+
 import com.example.dali_bsf.spectrum.util.ApplicationsManager;
 
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 /**
  * Created by khalil on 26/01/2018.
@@ -22,6 +26,11 @@ public class AppPresenter implements ApplicationsContract.ApplicationPresenter {
     @Override
     public void start() {
         prepareMovieData();
+    }
+
+    @Override
+    public void create(@Nullable Bundle bundle) {
+
     }
 
     @Override

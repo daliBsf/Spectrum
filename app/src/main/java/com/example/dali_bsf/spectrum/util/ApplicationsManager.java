@@ -35,7 +35,7 @@ public class ApplicationsManager {
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
         for (ApplicationInfo packageInfo : packages) {
-            applications.add(new Application(packageInfo.packageName, packageInfo.icon, pm.getLaunchIntentForPackage(packageInfo.packageName),false));
+            applications.add(new Application(packageInfo.packageName, packageInfo.loadIcon(pm), pm.getLaunchIntentForPackage(packageInfo.packageName),false));
         }
         return applications;
     }

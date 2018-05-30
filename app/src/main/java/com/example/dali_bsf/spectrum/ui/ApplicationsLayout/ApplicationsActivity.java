@@ -53,7 +53,7 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(mAdapter);
 
-        presenter.prepareMovieData();
+        presenter.create(getIntent().getExtras());
 
     }
 
@@ -66,4 +66,7 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
         Log.i("SIZE",""+apps.size());
         this.mAdapter.notifyDataSetChanged();
     }
+
+
+
 }
