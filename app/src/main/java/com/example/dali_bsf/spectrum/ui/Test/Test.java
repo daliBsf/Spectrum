@@ -1,8 +1,7 @@
-package com.example.dali_bsf.spectrum.ui.ApplicationsLayout;
+package com.example.dali_bsf.spectrum.ui.Test;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,22 +13,17 @@ import com.example.dali_bsf.spectrum.data.model.Application;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.android.DaggerActivity;
-import butterknife.BindView;
 
-/**
- * Created by khalil on 25/01/2018.
- */
-
-public class ApplicationsActivity extends DaggerActivity implements ApplicationsContract.ApplicationView {
+public class Test extends DaggerActivity implements  ApplicationsContract.ApplicationView {
 
     @Inject
-    public ApplicationsContract.ApplicationPresenter presenter;
+    public com.example.dali_bsf.spectrum.ui.Test.ApplicationsContract.ApplicationPresenter presenter;
 
     @Inject
     public IApplicationRepository applicationRepository;
@@ -41,9 +35,9 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
     ArrayList<Application> apps ;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.applications);
+        setContentView(R.layout.activity_test);
         ButterKnife.bind(this);
         Log.i("MSG","onCreate Executed ");
         apps =new ArrayList<>();
@@ -54,16 +48,17 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
         rv.setAdapter(mAdapter);
 
         presenter.prepareMovieData();
-
     }
 
-    public void setPresenter(ApplicationsContract.ApplicationPresenter presenter) {
-        this.presenter = presenter;
-    }
-    public void updateList(List<Application> applicationArrayList)
-    {
+    @Override
+    public void updateList(List<Application> applicationArrayList) {
         this.apps.addAll(apps.size(),applicationArrayList);
         Log.i("SIZE",""+apps.size());
         this.mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void setPresenter(ApplicationsContract.ApplicationPresenter presenter) {
+        this.presenter=presenter;
     }
 }

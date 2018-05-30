@@ -1,6 +1,7 @@
 package com.example.dali_bsf.spectrum.ui.menu;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,8 +68,8 @@ public class MenuGridViewAdapter extends RecyclerView.Adapter<MenuGridViewAdapte
             return app_name.getText().toString();
         }
 
-        public void setApp_icon(int app_icon) {
-            this.app_icon.setImageResource(app_icon);
+        public void setApp_icon(Drawable app_icon) {
+            this.app_icon.setImageDrawable(app_icon);
         }
     }
 }

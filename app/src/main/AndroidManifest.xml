@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.dali_bsf.spectrum">
+
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:name=".ui.Application"
@@ -23,13 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.menu.MenuActivity" />
         <activity android:name=".ui.ApplicationsLayout.ApplicationsActivity" />
+        <activity android:name=".ui.menu.MenuActivity" />
         <activity android:name=".ui.ParentLayout.ParentActivity" />
-        <activity
-            android:name=".ui.ParentLayout.ApplicationsLayout.ApplicationsActivity"
-            android:label="@string/title_activity_applications"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.Test.Test"></activity>
     </application>
 
 </manifest>

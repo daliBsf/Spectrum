@@ -1,4 +1,4 @@
-package com.example.dali_bsf.spectrum.ui.ApplicationsLayout;
+package com.example.dali_bsf.spectrum.ui.Test;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -34,7 +34,7 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
 
     @Override
     public ApplicationAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_item,parent);
+        View view = inflater.inflate(R.layout.list_item,parent,false);
         return new ApplicationAdapter.ViewHolder(view);
     }
 
