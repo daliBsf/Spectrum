@@ -6,6 +6,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.example.dali_bsf.spectrum.R;
 import com.example.dali_bsf.spectrum.data.Repostry.IApplicationRepository;
@@ -41,7 +42,7 @@ public class Test extends DaggerActivity implements  ApplicationsContract.Applic
         ButterKnife.bind(this);
         Log.i("MSG","onCreate Executed ");
         apps =new ArrayList<>();
-        mAdapter = new ApplicationAdapter(this,apps);
+        mAdapter = new ApplicationAdapter(this,apps,presenter);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rv.setLayoutManager(mLayoutManager);
         rv.setItemAnimator(new DefaultItemAnimator());
@@ -60,5 +61,18 @@ public class Test extends DaggerActivity implements  ApplicationsContract.Applic
     @Override
     public void setPresenter(ApplicationsContract.ApplicationPresenter presenter) {
         this.presenter=presenter;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+            presenter.addData();
+            return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //commit changes
+        presenter.addData();
+        super.onBackPressed();
     }
 }

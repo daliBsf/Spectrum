@@ -8,6 +8,12 @@ import io.realm.annotations.*;
  */
 
 public class Enfant extends RealmObject {
+    public Enfant(String id, String login, String sexe) {
+        Id = id;
+        this.login = login;
+        this.sexe = sexe;
+    }
+
     @PrimaryKey
     private String Id;
 
@@ -18,6 +24,9 @@ public class Enfant extends RealmObject {
     private String sexe;
 
     private String avatar;
+
+    public Enfant() {
+    }
 
     public String getId() {
         return Id;

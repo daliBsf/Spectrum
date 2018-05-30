@@ -2,6 +2,7 @@ package com.example.dali_bsf.spectrum.ui.Test;
 
 import android.os.Bundle;
 
+import com.example.dali_bsf.spectrum.data.model.Application;
 import com.example.dali_bsf.spectrum.data.model.Enfant;
 import com.example.dali_bsf.spectrum.util.ApplicationsManager;
 
@@ -23,6 +24,7 @@ public class AppPresenter implements ApplicationsContract.ApplicationPresenter {
     public AppPresenter(ApplicationsContract.ApplicationView view, ApplicationsManager manager){
         this.view = view ;
         this.manager=manager;
+        enfant = new Enfant("1","gizo","M");
     }
 
     @Override
@@ -39,9 +41,16 @@ public class AppPresenter implements ApplicationsContract.ApplicationPresenter {
     }
 
     private void prepareMovieData() {
-        List<com.example.dali_bsf.spectrum.data.model.Application> list=manager.getListApplication();
+        List<com.example.dali_bsf.spectrum.data.model.Application> list=manager.getRegistredApplication(enfant);
+
         this.view.updateList(list);
+    }
 
+    public void updateApp(Application application){
+        manager.updateApplication(enfant, application);
+    }
 
+    public void addData(){
+        manager.commitUpdateApp();
     }
 }

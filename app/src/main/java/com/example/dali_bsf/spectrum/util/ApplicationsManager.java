@@ -26,8 +26,10 @@ public class ApplicationsManager {
     private SharedPreferences.Editor editor;
 
 
-    public ApplicationsManager(Context context) {
+    public ApplicationsManager(Context context,SharedPreferencesManager sharedPreferencesManager) {
         this.context = context;
+        this.sharedPreferencesManager=sharedPreferencesManager;
+
     }
 
     public List<Application> getListApplication() {
@@ -50,7 +52,23 @@ public class ApplicationsManager {
             if (sharedPreferences.getBoolean(application.getName(), false))
             { application.setAuthorized(true);
                 authotzied.add(application);
-        }}
+            }
+        }
+        return authotzied;
+
+    }
+    public List<Application> getRegistredApplication(Enfant enfant) {
+        List<Application> allApps = this.getListApplication();
+        List<Application> authotzied = new ArrayList<>();
+        SharedPreferences sharedPreferences = this.sharedPreferencesManager.getSharedPrefernces(enfant.getLogin());
+        for (Application application : allApps) {
+            if (sharedPreferences.getBoolean(application.getName(), false))
+            { application.setAuthorized(true);
+            }else {
+                application.setAuthorized(false);
+            }
+            authotzied.add(application);
+        }
         return authotzied;
 
     }

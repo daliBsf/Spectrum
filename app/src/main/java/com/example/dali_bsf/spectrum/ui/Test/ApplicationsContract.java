@@ -27,5 +27,8 @@ public interface ApplicationsContract {
      * Is the presenter part of the contract that offers methods to send data
      */
     public interface ApplicationPresenter extends BasePresenter {
+        public void updateApp(Application application);
+        public void addData();
+
     }
 }

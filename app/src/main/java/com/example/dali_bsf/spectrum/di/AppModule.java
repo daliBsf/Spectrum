@@ -8,6 +8,7 @@ import com.example.dali_bsf.spectrum.data.Repostry.IParentRepository;
 import com.example.dali_bsf.spectrum.data.Repostry.ParentRepository;
 import com.example.dali_bsf.spectrum.ui.Application;
 import com.example.dali_bsf.spectrum.util.ApplicationsManager;
+import com.example.dali_bsf.spectrum.util.SharedPreferencesManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -18,10 +19,16 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
+
     @Provides
-    ApplicationsManager provideApplicationManager(Application application)
+    SharedPreferencesManager provideSharedPreferenceManager(Application application)
     {
-        return new ApplicationsManager(application.getApplicationContext());
+        return new SharedPreferencesManager(application.getApplicationContext());
+    }
+    @Provides
+    ApplicationsManager provideApplicationManager(Application application,SharedPreferencesManager sharedPreferencesManager)
+    {
+        return new ApplicationsManager(application.getApplicationContext(),sharedPreferencesManager);
     }
     @Provides
     IEnfantRepository provideEnfantRepository(Application application)
