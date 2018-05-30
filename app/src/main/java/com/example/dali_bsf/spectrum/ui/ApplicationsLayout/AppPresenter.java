@@ -1,10 +1,12 @@
 package com.example.dali_bsf.spectrum.ui.ApplicationsLayout;
 
-import com.example.dali_bsf.spectrum.ui.Application;
+import android.os.Bundle;
+
+import com.example.dali_bsf.spectrum.data.model.Enfant;
 import com.example.dali_bsf.spectrum.util.ApplicationsManager;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by khalil on 26/01/2018.
@@ -14,6 +16,7 @@ public class AppPresenter implements ApplicationsContract.ApplicationPresenter {
 
     ApplicationsContract.ApplicationView view;
     ApplicationsManager manager;
+    Enfant enfant;
 
 
     public AppPresenter(ApplicationsContract.ApplicationView view, ApplicationsManager manager){
@@ -22,15 +25,40 @@ public class AppPresenter implements ApplicationsContract.ApplicationPresenter {
     }
 
     @Override
-    public void start() {
-        prepareMovieData();
+    public void create(Bundle bundle) {
+        enfant = (Enfant) bundle.getSerializable("enfant");
+
+        prepareApplicationData();
     }
 
     @Override
-    public void prepareMovieData() {
+    public void updateApplication(com.example.dali_bsf.spectrum.data.model.Application application) {
+        this.manager.updateApplication(enfant,application);
+
+    }
+
+    private void prepareApplicationData() {
         List<com.example.dali_bsf.spectrum.data.model.Application> list=manager.getListApplication();
         this.view.updateList(list);
 
+    }
+
+    @Override
+    public void onBack() {
+        commitChanges();
+    }
+
+    @Override
+    public void homePressed() {
+        commitChanges();
+    }
+
+    @Override
+    public void start() {
 
     }
+    private  void commitChanges(){
+        this.manager.commitUpdateApp();
+    }
+
 }

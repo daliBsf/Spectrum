@@ -22,6 +22,8 @@ import static android.content.ContentValues.TAG;
 public class ApplicationsManager {
     private Context context;
     private SharedPreferencesManager sharedPreferencesManager;
+    private SharedPreferences.Editor editor;
+
 
     public ApplicationsManager(Context context) {
         this.context = context;
@@ -51,17 +53,21 @@ public class ApplicationsManager {
 
     }
 
-    public void updateApplication(Enfant enfant, List<Application> applications) {
-        SharedPreferences preferences = sharedPreferencesManager.getSharedPrefernces(enfant.getLogin());
-        SharedPreferences.Editor editor = preferences.edit();
-        for (Application application : applications
-                ) {
+    public void updateApplication(Enfant enfant, Application application) {
+        SharedPreferences.Editor editor = getEditor(enfant);
+        editor.putBoolean(application.getName(),application.isAuthorized());
 
-            editor.putBoolean(application.getName(),application.isAuthorized());
+    }
+    public  void commitUpdateApp(){
+        editor.commit();
+        editor=null;
+    }
+    private SharedPreferences.Editor getEditor(Enfant enfant){
+        if(editor==null)
+            editor= sharedPreferencesManager.getSharedPrefernces(enfant.getLogin()).edit();
+        return editor;
 
 
-
-        }
     }
 
 }

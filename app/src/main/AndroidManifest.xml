@@ -23,9 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.menu.MenuActivity" ></activity>
-        <activity android:name=".ui.ApplicationsLayout.ApplicationsActivity" ></activity>
-        <activity android:name=".ui.ParentLayout.ParentActivity"></activity>
+        <activity android:name=".ui.menu.MenuActivity" />
+        <activity android:name=".ui.ApplicationsLayout.ApplicationsActivity" />
+        <activity android:name=".ui.ParentLayout.ParentActivity" />
+        <activity
+            android:name=".ui.ParentLayout.ApplicationsLayout.ApplicationsActivity"
+            android:label="@string/title_activity_applications"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

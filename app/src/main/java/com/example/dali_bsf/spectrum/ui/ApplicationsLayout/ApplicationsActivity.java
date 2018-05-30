@@ -7,10 +7,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.example.dali_bsf.spectrum.R;
 import com.example.dali_bsf.spectrum.data.Repostry.IApplicationRepository;
 import com.example.dali_bsf.spectrum.data.model.Application;
+import com.example.dali_bsf.spectrum.data.model.Enfant;
+import com.example.dali_bsf.spectrum.util.ApplicationsManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,8 +34,8 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
     @Inject
     public ApplicationsContract.ApplicationPresenter presenter;
 
-    @Inject
-    public IApplicationRepository applicationRepository;
+
+
 
     @BindView(R.id.rv)
     public RecyclerView rv ;
@@ -45,15 +48,16 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
         super.onCreate(savedInstanceState);
         setContentView(R.layout.applications);
         ButterKnife.bind(this);
-        apps =new ArrayList<>();
-        mAdapter = new ApplicationAdapter(this,apps);
+        Enfant enfant = (Enfant) getIntent().getSerializableExtra("enfant");
+        apps = new ArrayList<Application>();
+        mAdapter = new ApplicationAdapter(this,apps,presenter);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rv.setLayoutManager(mLayoutManager);
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(mAdapter);
         Log.i("MSG","onCreate Executed ");
 
-        presenter.prepareMovieData();
+        presenter.create(getIntent().getExtras());
 
     }
 
@@ -65,5 +69,23 @@ public class ApplicationsActivity extends DaggerActivity implements Applications
         this.apps.addAll(apps.size(),applicationArrayList);
         Log.i("SIZE",""+apps.size());
         this.mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.presenter.onBack();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.presenter.homePressed();
+                return true;
+
+            default:
+                return false;
+        }
     }
 }

@@ -1,9 +1,8 @@
 package com.example.dali_bsf.spectrum.ui.ApplicationsLayout;
 
 import android.content.Context;
+import android.content.Intent;
 
-import com.example.dali_bsf.spectrum.data.Repostry.ApplicationRepository;
-import com.example.dali_bsf.spectrum.data.Repostry.IApplicationRepository;
 import com.example.dali_bsf.spectrum.util.ApplicationsManager;
 
 import dagger.Binds;
