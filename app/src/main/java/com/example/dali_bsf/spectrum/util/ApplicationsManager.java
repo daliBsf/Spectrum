@@ -79,7 +79,8 @@ public class ApplicationsManager {
 
     }
     public  void commitUpdateApp(){
-        editor.commit();
+        if (editor != null)
+          editor.commit();
         editor=null;
     }
     private SharedPreferences.Editor getEditor(Enfant enfant){
